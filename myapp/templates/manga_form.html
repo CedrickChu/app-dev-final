@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Add/Edit Manga</h1>
+<nav class='nav' aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'manga-list' %}">Manga List</a></li>
+        <li class="breadcrumb-item"><a href="#">Latest Manga</a></li>
+        <li class="breadcrumb-item"><a href="#">Top Manga</a></li>
+        <li class="breadcrumb-item"><a href="#">Collection</a></li>
+    </ol>
+</nav>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

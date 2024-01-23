@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 class='text-center'>Manga Detail</h2>
+
+<nav class='nav' aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'manga-list' %}">Manga List</a></li>
+        <li class="breadcrumb-item"><a href="#">Latest Manga</a></li>
+        <li class="breadcrumb-item"><a href="#">Top Manga</a></li>
+        <li class="breadcrumb-item"><a href="#">Collection</a></li>
+    </ol>
+</nav>
+<a class='btn btn-danger' href="{% url 'manga-update' manga.pk %}">Edit</a>
+<a class='btn btn-danger' href="{% url 'manga-delete' manga.pk %}">Delete</a>
+<h1>{{ object.title }}</h1>
+    <p><strong>Author:</strong> {{ object.author }}</p>
+    <p><strong>Status:</strong> {{ object.status }}</p>
+    <p><strong>Genre:</strong> {{ object.genre }}</p>
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    
+{% endblock %}
